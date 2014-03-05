@@ -1,6 +1,5 @@
 # Python Sudoku solver and generator written by Matthew Havard.
 import random
-import sys
 
 class Sudoku:
     """
@@ -209,31 +208,6 @@ def random_unsolved_puzzle():
             solution.my_setitem(r, c, v)
     return solution
 
-
-# if __name__ == "__main__":
-#     # You can pass SuperSudoku.py a filename on the command line, and it will
-#     # read in a sudoku board.  Otherwise it just does the example board.
-#     if len(sys.argv) > 1:
-#         board = open(sys.argv[1]).read()
-#     else:
-#         # A sudoku board in a text file must be in the same format as
-#         # the string variable `board` below:
-#         # No extraneous newlines, 1 line per row, no spaces.  Blanks
-#         # are 0's
-#         board = """\
-# 910305020
-# 000917000
-# 073800006
-# 056008070
-# 800050001
-# 090400680
-# 700009850
-# 000741000
-# 040506013"""
-#     s = Sudoku(board)
-#     print "Solving:\n", s
-#     g = solutions(copy_sudoku(s), (0,0), True)
-#     print g
 if __name__ == "__main__":
 	s = ""
 	for i in range(9):
