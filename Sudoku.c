@@ -196,12 +196,6 @@ square newSq(int r, int c){
   return sq;
 }
 
-square nxtSqXXX(square sq){
-  if (sq.c == 8)
-	return newSq(sq.r+1, 0);
-  return newSq(sq.r, sq.c+1);
-}
-
 square nxtSq(int **board, square sq){
   if (sqe(sq, 8, 8) || getSq(board, sq) == 0)
 	return sq;
@@ -211,7 +205,7 @@ square nxtSq(int **board, square sq){
 	  
 }
 
-int **solveSudoku(int **board, square sq, int numtabs){
+int **solveSudoku(int **board, square sq){
   sq = nxtSq(board, sq);
   if (sqe(sq, 8, 8) && getSq(board, sq) > 0)
 	return board;
@@ -219,7 +213,7 @@ int **solveSudoku(int **board, square sq, int numtabs){
   for(i=1; i<10; i++){
 	if(validAtSquare(setSq(board, sq, i), sq)){
 	  square nsq = nxtSq(board, sq);
-	  int **nxtboard = solveSudoku(cpsudoku(board), nsq, numtabs+1);
+	  int **nxtboard = solveSudoku(cpsudoku(board), nsq);
 	  if (getSq(nxtboard, nsq) != -1)
 		return nxtboard;
 	}
@@ -245,5 +239,5 @@ int **readBoard(){
 int main(int argc, char **argv){
   int **board = readBoard();
   printSudoku(board);
-  printSudoku(solveSudoku(board, newSq(0,0), 0));
+  printSudoku(solveSudoku(board, newSq(0,0)));
 }
