@@ -45,7 +45,8 @@ I've provided a sample board, `sampleboard.txt` to demonstrate my solvers.  You 
 | 3 : 8 : 5 | 7 : 4 : 1 | 2 : 6 : 9 |
 +---+---+---+---+---+---+---+---+---+
 | 2 : 4 : 9 | 5 : 8 : 6 | 7 : 1 : 3 |
-+===+===+===+===+===+===+===+===+===+```
++===+===+===+===+===+===+===+===+===+
+```
 
 More specific compiling and running instructions below.
 
